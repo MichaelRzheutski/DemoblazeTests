@@ -7,10 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class CartPage extends AbstractPage {
-    @FindBy(xpath = "//h2[text()='Products']")
+    @FindBy(xpath = ".//h2[text()='Products']")
     private ExtendedWebElement productsTitle;
 
-    @FindBy(xpath = "//td[text()='Samsung galaxy s6']")
+    @FindBy(xpath = ".//td[text()='Samsung galaxy s6']")
     private ExtendedWebElement phoneMakeInCart;
 
     public CartPage(WebDriver driver) {

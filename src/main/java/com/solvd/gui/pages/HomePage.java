@@ -1,8 +1,6 @@
 package com.solvd.gui.pages;
 
 import com.solvd.gui.components.Header;
-import com.solvd.gui.components.LoginModalWindow;
-import com.solvd.gui.components.PhoneCard;
 import com.zebrunner.carina.utils.config.Configuration;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
@@ -13,9 +11,6 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends AbstractPage {
     @FindBy(xpath = "//*[@id='narvbarx']")
     private Header header;
-
-    @FindBy(xpath = "//*[@id='logInModal']")
-    private LoginModalWindow loginModalWindow;
 
     @FindBy(xpath = "//*[@id='prev2']")
     private ExtendedWebElement prevButton;
@@ -46,9 +41,5 @@ public class HomePage extends AbstractPage {
 
     public Header getHeader() {
         return header;
-    }
-
-    public LoginModalWindow getLoginModal() {
-        return loginModalWindow;
     }
 }

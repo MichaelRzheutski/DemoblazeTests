@@ -16,13 +16,13 @@ public class Header extends AbstractUIObject {
     @FindBy(xpath = "//*[@id='cartur']")
     private ExtendedWebElement cartButton;
 
-    @FindBy(xpath = ".//*[@id='login2']")
+    @FindBy(xpath = "//*[@id='login2']")
     private ExtendedWebElement loginButton;
 
-    @FindBy(xpath = ".//*[@id='nameofuser']")
+    @FindBy(xpath = "//*[@id='nameofuser']")
     private ExtendedWebElement welcomeUserButton;
 
-    @FindBy(xpath = ".//*[@id='logout2']")
+    @FindBy(xpath = "//*[@id='logout2']")
     private ExtendedWebElement logOutButton;
 
     public Header(WebDriver driver) {

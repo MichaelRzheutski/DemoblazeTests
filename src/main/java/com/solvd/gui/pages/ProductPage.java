@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ProductPage extends AbstractPage {
-    @FindBy(xpath = "//div[@class='col-sm-12 col-md-6 col-lg-6']/a")
+    @FindBy(xpath = ".//div[@class='col-sm-12 col-md-6 col-lg-6']/a")
     private ExtendedWebElement addToCartButton;
 
     @FindBy(tagName = "h2")
@@ -23,11 +23,6 @@ public class ProductPage extends AbstractPage {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
         setUiLoadedMarker(phoneMake);
-    }
-
-    @Override
-    public void open() {
-        super.openURL(Configuration.getRequired("url"));
     }
 
     public String putProductToCart() {
