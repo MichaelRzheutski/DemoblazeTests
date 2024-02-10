@@ -1,5 +1,6 @@
 package com.solvd.gui.pages;
 
+import com.solvd.gui.components.OrderModal;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
@@ -13,6 +14,9 @@ public class CartPage extends AbstractPage {
     @FindBy(xpath = ".//td[text()='Samsung galaxy s6']")
     private ExtendedWebElement phoneMakeInCart;
 
+    @FindBy(xpath = "//*[@data-target='#orderModal']")
+    private ExtendedWebElement placeOrderButton;
+
     public CartPage(WebDriver driver) {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
@@ -21,5 +25,14 @@ public class CartPage extends AbstractPage {
 
     public boolean isProductInCart() {
         return phoneMakeInCart.isElementPresent();
+    }
+
+    public boolean isPlaceOrderButtonPresent() {
+        return placeOrderButton.isElementPresent();
+    }
+
+    public OrderModal clickPlaceOrderButton() {
+        placeOrderButton.click();
+        return new OrderModal(driver);
     }
 }
