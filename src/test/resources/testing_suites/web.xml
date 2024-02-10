@@ -6,6 +6,8 @@
             <class name="com.solvd.web.LoginTest"/>
             <class name="com.solvd.web.PhoneCardTest"/>
             <class name="com.solvd.web.CartTest"/>
+            <class name="com.solvd.web.CarouselTest"/>
+            <class name="com.solvd.web.FooterTest"/>
         </classes>
     </test>
 </suite>

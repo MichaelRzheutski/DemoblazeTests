@@ -14,7 +14,7 @@ public class CarouselTest extends TestBase {
         carousel.isUIObjectPresent(3);
         softAssert.assertTrue(carousel.isCarouselItemPresent(1));
 
-        softAssert.assertEquals(carousel.getSlideByIndex(2), "carousel-item active carousel-item-left", "Slide has not changed");
+        softAssert.assertEquals(carousel.getSlideByIndex(2), "carousel-item active", "Slide has not changed");
         softAssert.assertAll();
     }
 }
