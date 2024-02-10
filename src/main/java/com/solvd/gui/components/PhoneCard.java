@@ -9,17 +9,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class PhoneCard extends AbstractUIObject {
-    @FindBy(xpath = "//*[@id='tbodyid']//a[@class='hrefch']")
+    @FindBy(xpath = "//*[@id='tbodyid']/div[%d]//a[@class='hrefch']")
     private ExtendedWebElement phoneMake;
 
-    @FindBy(xpath = "//*[@id='tbodyid']//p")
+    @FindBy(xpath = "//*[@id='tbodyid']/div[%d]//p")
     private ExtendedWebElement phoneDescription;
 
-    @FindBy(xpath = "//*[@id='tbodyid']//h5")
+    @FindBy(xpath = "//*[@id='tbodyid']/div[%d]//h5")
     private ExtendedWebElement phonePrice;
-
-    @FindBy(xpath = "//*[@id='tbodyid']//a[text()='Nokia lumia 1520']")
-    private ExtendedWebElement nokiaLumia1520;
 
     public PhoneCard(WebDriver driver) {
         super(driver);
@@ -29,21 +26,21 @@ public class PhoneCard extends AbstractUIObject {
         super(driver, searchContext);
     }
 
-    public Phone getPhone() {
+    public Phone getPhoneByIndex(int index) {
         Phone phone = new Phone();
-        phone.setPhoneMake(phoneMake.getText());
-        phone.setPhoneDescription(phoneDescription.getText());
-        phone.setPhonePrice(Integer.parseInt(phonePrice.getText().replace("$", "")));
+        phone.setPhoneMake(phoneMake.format(index).getText());
+        phone.setPhoneDescription(phoneDescription.format(index).getText());
+        phone.setPhonePrice(Integer.parseInt(phonePrice.format(index).getText().replace("$", "")));
 
         return phone;
     }
 
-    public boolean isNokiaLumia1520Present() {
-        return nokiaLumia1520.isElementPresent();
+    public boolean isNokiaLumia1520PresentByIndex(int index) {
+        return phoneMake.format(index).isElementPresent();
     }
 
-    public ProductPage goToProductPage() {
-        phoneMake.click();
+    public ProductPage goToProductPageByIndex(int index) {
+        phoneMake.format(index).click();
         return new ProductPage(driver);
     }
 }

@@ -10,7 +10,7 @@ public class LoginTest extends TestBase {
     private final LoginService loginService = new LoginService();
 
     @Test(description = "Verify valid login")
-    public void verifyValidLogin() {
+    public void verifyValidLoginTest() {
         getHomePage();
         Header header = new Header(getDriver());
         loginService.login(loginService.getUser(Users.VALID), getDriver());
@@ -18,7 +18,7 @@ public class LoginTest extends TestBase {
     }
 
     @Test(description = "Verify invalid login")
-    public void verifyInvalidLogin() {
+    public void verifyInvalidLoginTest() {
         getHomePage();
         Header header = new Header(getDriver());
         loginService.login(loginService.getUser(Users.INVALID), getDriver());
@@ -26,7 +26,7 @@ public class LoginTest extends TestBase {
     }
 
     @Test(description = "Verify logout")
-    public void verifyLogout() {
+    public void verifyLogoutTest() {
         getHomePage();
         Header header = new Header(getDriver());
         loginService.login(loginService.getUser(Users.VALID), getDriver());
