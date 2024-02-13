@@ -7,9 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginModalWindow extends AbstractUIObject {
-    @FindBy(xpath = "//*[@id='logInModal']")
-    public ExtendedWebElement loginModal;
-
     @FindBy(xpath = "//*[@id='loginusername']")
     public ExtendedWebElement loginField;
 
@@ -43,10 +40,5 @@ public class LoginModalWindow extends AbstractUIObject {
     public LoginModalWindow clickLoginButton() {
         loginButton.click();
         return this;
-    }
-
-    public String clickCloseButton() {
-        closeButton.click();
-        return loginModal.getAttribute("aria-hidden");
     }
 }
