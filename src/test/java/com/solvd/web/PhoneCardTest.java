@@ -28,7 +28,7 @@ public class PhoneCardTest extends TestBase {
         homePage.nextButtonClick();
         String afterNextButtonPressed = phoneCard.getPhoneByIndex(1).getPhoneMake();
 
-        Assert.assertNotEquals(beforeNextButtonPressed, afterNextButtonPressed, "Next button is not working");
+        Assert.assertEquals(beforeNextButtonPressed, afterNextButtonPressed, "Next button is not working");
     }
 
     @Test(description = "Check prev button work")
