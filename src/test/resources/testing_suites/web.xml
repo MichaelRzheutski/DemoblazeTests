@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Web suite" verbose="1" parallel="tests" thread-count="1">
+    <test name="Web tests" parallel="methods" thread-count="1">
+        <classes>
+            <class name="com.solvd.web.LoginTest"/>
+            <class name="com.solvd.web.PhoneCardTest"/>
+            <class name="com.solvd.web.CartTest"/>
+            <class name="com.solvd.web.CarouselTest"/>
+            <class name="com.solvd.web.FooterTest"/>
+        </classes>
+    </test>
+</suite>
