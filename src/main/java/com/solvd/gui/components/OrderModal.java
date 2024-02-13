@@ -91,7 +91,7 @@ public class OrderModal extends AbstractUIObject {
         return this;
     }
 
-    public static String formatCard(String cardNumber) {
+    private static String formatCard(String cardNumber) {
         if (cardNumber == null) {
             return null;
         }

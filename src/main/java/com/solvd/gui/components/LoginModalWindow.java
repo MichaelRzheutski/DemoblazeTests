@@ -8,16 +8,16 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginModalWindow extends AbstractUIObject {
     @FindBy(xpath = "//*[@id='loginusername']")
-    public ExtendedWebElement loginField;
+    private ExtendedWebElement loginField;
 
     @FindBy(xpath = "//*[@id='loginpassword']")
-    public ExtendedWebElement passwordField;
+    private ExtendedWebElement passwordField;
 
     @FindBy(xpath = "//*[@id='logInModal']//button[text()='Close']")
-    public ExtendedWebElement closeButton;
+    private ExtendedWebElement closeButton;
 
     @FindBy(xpath = "//button[text()='Log in']")
-    public ExtendedWebElement loginButton;
+    private ExtendedWebElement loginButton;
 
     public LoginModalWindow(WebDriver driver) {
         super(driver);
